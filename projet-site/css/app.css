@@ -1,0 +1,153 @@
+/*en mis les margins et les padding a 0 et on cache le overflow*/
+html, body {
+    margin: 0; 
+    padding: 0;
+    overflow-x: hidden;
+
+}
+.entete{
+    width: 100%;
+    height: 60px;
+    background: #19152f;
+
+}
+.entete_navigation{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.entete_navigation_logo_titre{
+    align-items: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+.entete_navigation_menu_lien{
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 600;
+    margin-right: auto;
+    color: white;
+}
+.entete_navigation_menu_lien:hover{
+    text-decoration: none;
+}
+.entete_navigation_menu_lien i{
+    margin: 5px;
+}
+/*on donne la taille et largeur pour le burger*/
+.entete_navigation_burger{
+    width: 45px;
+    height: 60px;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+}
+/*on cree la premiere bar du burger*/
+.entete_navigation_burger_icon, .entete_navigation_burger_icon::before, .entete_navigation_burger_icon::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: relative;
+    background: white;
+
+}
+/*on cree lesdeux autres barres*/
+.entete_navigation_burger_icon::before{ top: 10px;}
+.entete_navigation_burger_icon::after{ top: -14px;}
+/*on ajoute la classe is_open a notre menu comme ca au clique le menu descend*/
+.is-open .entete_navigation_menu{
+    transform: translateY(0);
+}
+
+@media only screen and (max-width: 770px){
+
+    .entete_navigation_logo_titre{
+        display: none;
+    }
+    .entete_navigation_burger{ 
+        display: flex;
+        z-index: 2;
+    }
+    /* on position le menu*/
+    .entete_navigation_menu{
+        /* on tranlate le menu versle haut*/
+        transform: translateY(-160%);
+        display: flex;
+        position: absolute;
+        background: #f5653a;
+        width: auto;
+        height: auto;
+        top: 60px;
+        left: 0px;
+        flex-direction: column;
+        justify-content:center;
+        transition: all 0.3s ease-in-out;
+        z-index: 3;
+    }
+    .entete_navigation_menu_lien{
+        margin: 20px;
+    }  
+}
+.contenu{
+    margin-top: 40px;
+}
+.pied{
+    background: #19152f;
+    padding-top: 10px;
+}
+.pied_lien{
+    color: white;
+}
+.pied_lien{
+    margin-left: 20px;
+}
+.formconnexion{
+    width: 80%;
+    min-height: 500px;
+    padding-top: 75px;
+}
+.formcontact{
+    width: 60%;
+    padding-top: 45px;
+    min-height: 500px;
+
+}
+.tabliste{
+    width: 60%;
+    justify-content: center;
+    padding-top: 45px;
+    min-height: 500px;
+}
+.utilisateur{
+    padding-top: 30px;
+    text-align: center;
+}
+.nosuer{
+    min-height: 430px;
+}
+.tablistes{
+    padding-top: 20px;
+    min-height: 430px;
+}
+.bouton{
+    width: 130px;
+    margin: 30px;
+    margin-top: 80px;
+    padding: 10px;
+    background: #030303;
+    border-radius: 5px;
+}
+.bouton a {
+    margin: 30px;
+    text-align: center;
+    color: white;
+}
+.galerie{
+    margin-top: 40px;
+}
